@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseWithRobux | Coming Soon</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/VZXdev/code-license/refs/heads/main/icons8-%D1%80%D0%BE%D0%B1%D1%83%D0%BA%D1%81-50.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .cat-container {
+            margin-bottom: 20px;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cat-container img {
+            max-width: 80%;
+            max-height: 40vh;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .coming-soon {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        h3 {
+            font-size: 1rem;
+            text-align: center;
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        /* Медиазапросы для адаптивности */
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 0.9rem;
+            }
+            
+            .cat-container img {
+                max-width: 70%;
+                max-height: 35vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .coming-soon {
+                font-size: 1.5rem;
+                margin-top: 15px;
+            }
+            
+            h3 {
+                font-size: 0.8rem;
+            }
+            
+            .cat-container {
+                margin-bottom: 15px;
+            }
+            
+            .cat-container img {
+                max-width: 60%;
+                max-height: 30vh;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .coming-soon {
+                font-size: 1.2rem;
+            }
+            
+            h3 {
+                font-size: 0.7rem;
+            }
+            
+            .cat-container img {
+                max-width: 50%;
+                max-height: 25vh;
+            }
+        }
+    </style>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WT3EQX4PZ"></script>
+<script src="https://static.casewithrobux.fun/googletag.jss"></script>
+<body>
+    <div class="cat-container">
+        <img src="https://media.tenor.com/FYsjyvi3C7kAAAAj/rupert-cat.gif" alt="Animated cat">
+    </div>
+    
+    <div class="coming-soon">COMING SOON</div>
+    <h3>10 SEPTEMBER 16:00 UTC</h3>
+    <h3>Owner: <a href="https://t.me/qwsrb">https://t.me/qwsrb</a></h3>
+    <audio id="bgMusic" loop>
+        <source src="https://raw.githubusercontent.com/VZXdev/CaseWithRobux/refs/heads/main/maxwell-the-cat-theme.mp3" type="audio/mpeg">
+        Your browser dont support audio😔
+    </audio>
+    
+    <script>
+        const audio = document.getElementById('bgMusic');
+        
+        function playAudio() {
+            audio.play().catch(error => {
+                console.log('err:', error);
+            });
+        }
+        window.addEventListener('load', function() {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            const audioContext = new AudioContext();
+            document.body.addEventListener('click', function() {
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+                playAudio();
+            }, { once: true }); 
+
+            playAudio();
+        });
+
+    </script>
+</body>
+</html>
